@@ -122,3 +122,12 @@ $ streamlit run dashboard/dashboard.py
 
 8. You can access both the API endpoints from their individual command runs and should be able to access the same via the browser (for dashboard and api) or any other tool for working with APIs
 
+---
+## Suggested Improvements
+1. The current data insertion process in the DB is a uni-processed operation on multiple small files, we can improve it by creating few large files and insert them, or multi-process the insertion process or both.
+
+2. Both the API run and Dashboard runs can be incorporated in a single python script and scheduled to run independently via a single command.
+
+3. The data insertion for OHLCV data can be done before hand, but not as barviews since barviews can end up creating two bars of the same timestamp if the data insertion is not performed carefully, but rather the bars are calculated and inserted on a per symbol basis for every day, along with minutely bars for faster querying.
+
+4. Instead of using postgres we can use a database like clickhouse or timescale which are well regarded for their ability to work well with timeseries datasets.
