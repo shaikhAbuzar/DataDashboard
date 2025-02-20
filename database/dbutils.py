@@ -213,10 +213,12 @@ class PGUtils(DBInterface):
             self._create_tbt_table()
             psycopg2.extras.execute_values(self.cursor, insertion_query, data)
             self.conn.commit()
-            print("Data inserted successfully")
         except Exception as error:
             self.conn.rollback()
             print("Data insertion failed:", error)
+            return
+
+        print("Data inserted successfully")
 
     def get_tick_data(
         self, symbol: str, date_range: str, frequency: int = 1
