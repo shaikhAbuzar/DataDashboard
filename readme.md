@@ -75,7 +75,7 @@ This is the file that explains the whole system architecture of the application 
 
 1. Clone this entire repo using the below command, and move inside the repo.
 ```bash
-$ git clone <url of this repo>
+$ git clone https://github.com/shaikhAbuzar/TrueBeacon.git
 
 $ cd TrueBeacon
 ```
