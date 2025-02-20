@@ -103,11 +103,11 @@ $ source tbvenv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-5. Once you have installed the same you are going to insert the data available in the [`data/tbt/`](data/tbt/) directory. We have the data for the dates `2022-04-04` and `2022-04-05`, to insert the data we will use the [`ingester.py`](Ingestion/ingester.py) file, run the following commands to begin the insertion.
+5. Once you have installed the same you are going to insert the data available in the [`data/tbt/`](data/tbt/) directory. We have the data for the dates `2022-04-04` and `2022-04-05`, to insert the data we will use the [`ingester.py`](ingestion/ingester.py) file, run the following commands to begin the insertion.
 ```bash
-$ python Ingestion/ingestor.py 2022-04-04
+$ python ingestion/ingestor.py 2022-04-04
 
-$ python Ingestion/ingestor.py 2022-04-05
+$ python ingestion/ingestor.py 2022-04-05
 ```
 
 6. After the data insertion is done we will start the API endpoints by running the following command.
