@@ -218,7 +218,7 @@ class PGUtils(DBInterface):
             print("Data insertion failed:", error)
             return
 
-        print("Data inserted successfully")
+        # print("Data inserted successfully")
 
     def get_tick_data(
         self, symbol: str, date_range: str, frequency: int = 1

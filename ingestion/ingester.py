@@ -63,7 +63,7 @@ class Ingester:
                 ticker_df.drop(columns=["Date", "Time"], inplace=True)
                 ticker_df["Ticker"] = ticker_df["Ticker"].str.replace(".NSE", "")
 
-                yield ticker_df[
+                yield ticker_file.filename, ticker_df[
                     [
                         "Datetime",
                         "Ticker",
@@ -86,8 +86,9 @@ class Ingester:
         tdate : str
             Date in 'dd-mm-yyyy' format
         """
-        for tbt_df in self.unzip_tbt(tdate=tdate):
+        for file_name, tbt_df in self.unzip_tbt(tdate=tdate):
             self.pgutils.insert_df_to_tbt(tbt_df)
+            print(f"[INSERTED] {file_name}")
 
 
 if __name__ == "__main__":
