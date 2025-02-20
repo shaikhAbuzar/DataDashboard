@@ -21,7 +21,7 @@ class Ingester:
     """
 
     def __init__(self):
-        self.data_path = Path.cwd().parent / "data"
+        self.data_path = Path.cwd() / "data"
         self.tbt_data_path = self.data_path / "tbt"
 
         self.pgutils = dbutils.PGUtils()
