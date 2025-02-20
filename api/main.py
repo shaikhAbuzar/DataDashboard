@@ -72,8 +72,6 @@ def stream_bars(symbol: str, date_range: str, frequency: int = 1) -> Generator:
         symbol=symbol, date_range=date_range, frequency=frequency
     )
 
-    print(candles)
-
     yield ",".join(candles.columns) + "\n"
 
     for candle in candles.itertuples():
