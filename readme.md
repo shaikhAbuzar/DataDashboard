@@ -1,13 +1,11 @@
-# True Beacon - Data Dashboard
-
-The following project implements a data dashboard from [this](https://truebeacon.notion.site/Full-Stack-Coding-Assignment-2025-188f322ed20180ce86d1c810de260f20) project link.
+# Data Dashboard
 
 The project focuses on the implementation of the multiple individual units to form a full stack data application which can be scaled easily while being easy to modify and change things without breaking existing processes.
 
 
 ## Structure of the Code Base
 ```bash
-TrueBeacon
+DataDashboard
 ├── api
 │   ├── __init__.py
 │   └── main.py
@@ -75,9 +73,9 @@ This is the file that explains the whole system architecture of the application 
 
 1. Clone this entire repo using the below command, and move inside the repo.
 ```bash
-$ git clone https://github.com/shaikhAbuzar/TrueBeacon.git
+$ git clone https://github.com/shaikhAbuzar/DataDashboard.git
 
-$ cd TrueBeacon
+$ cd DataDashboard
 ```
 
 2. Make sure to install and run the postgres script, the one name [`db_install.sh`](Scripts/db_install.sh). Or alternatively you can run the command in the script directly on the command line.
@@ -85,7 +83,7 @@ $ cd TrueBeacon
 # 1. Run the script 
 $ bash Scripts/db_install.sh
 
-# 2. Run the command directly from the TrueBeacon directory
+# 2. Run the command directly from the DataDashboard directory
 $ docker run --name my_postgres -e POSTGRES_PASSWORD=mysecretpassword  -v $PWD/Data/db_data:/var/lib/postgresql/data -d -p 5432:5432 postgres
 ```
 3. Create a virtual environment for you python library, so that dependencies for this environment is not impacting any other project you may have running, command to do the same is as below. Once the environment is created, activate it.
@@ -115,7 +113,7 @@ $ python ingestion/ingester.py 2022-04-05
 $ fastapi dev api/main.py
 ```
 
-7. After the API server has been inserted and open a new terminal and navigate till the `TrueBeacon` directory (the path where you have cloned this repo). Once inside the repo activate the virtual environment as mentioned in the second command of `Step 3`, after that run the following command to run the streamlit dashboard.
+7. After the API server has been inserted and open a new terminal and navigate till the `DataDashboard` directory (the path where you have cloned this repo). Once inside the repo activate the virtual environment as mentioned in the second command of `Step 3`, after that run the following command to run the streamlit dashboard.
 ```bash
 $ streamlit run dashboard/dashboard.py
 ```
